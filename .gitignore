@@ -1,4 +1,5 @@
-target/
+target/*
+!target/ai-secure-exam-system.war
 *.class
 .idea/
 *.iml
