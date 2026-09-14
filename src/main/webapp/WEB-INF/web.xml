@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>AI-Powered Secure Online Examination System</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- ============================================================
+         FILTERS - order below is the actual execution order Tomcat
+         applies for a single matching path, regardless of the order
+         entries appear for DIFFERENT paths. We declare AuthFilter
+         before the role filters so it always runs first.
+         /proctoring/* is intentionally excluded from auth filters:
+         it is AJAX-only and validated by the attempt's student-id
+         match inside ProctoringEventServlet itself. Direct browser
+         navigation to /proctoring/* returns a JSON error, not HTML.
+         ============================================================ -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.aiexam.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/student/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminAuthFilter</filter-name>
+        <filter-class>com.aiexam.filter.AdminAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminAuthFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>StudentAuthFilter</filter-name>
+        <filter-class>com.aiexam.filter.StudentAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StudentAuthFilter</filter-name>
+        <url-pattern>/student/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ============================================================
+         SESSION CONFIGURATION - secure cookie flags + idle timeout
+         ============================================================ -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+            <!-- Set <secure>true</secure> once deployed behind HTTPS -->
+        </cookie-config>
+    </session-config>
+
+    <!-- ============================================================
+         ERROR PAGES
+         ============================================================ -->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error/403.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error/500.jsp</location>
+    </error-page>
+
+</web-app>

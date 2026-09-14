@@ -1,0 +1,21 @@
+# ============================================================
+# Render Infrastructure as Code Blueprint
+# AI-Powered Secure Online Examination System
+# ============================================================
+services:
+  - type: web
+    name: ai-secure-exam-system
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_DRIVER
+        value: com.mysql.cj.jdbc.Driver

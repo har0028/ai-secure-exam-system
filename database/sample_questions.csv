@@ -1,0 +1,11 @@
+question_text,question_type,option_a,option_b,option_c,option_d,correct_option,marks,category,difficulty
+"Which data structure uses LIFO order?",MCQ,Queue,Stack,Linked List,Tree,B,2,Data Structures,EASY
+"What is the time complexity of binary search?",MCQ,O(n),O(log n),O(n^2),O(1),B,2,Algorithms,MEDIUM
+"A binary tree node has at most how many children?",MCQ,1,2,3,4,B,1,Trees,EASY
+"Which SQL clause filters grouped rows?",MCQ,WHERE,HAVING,GROUP BY,ORDER BY,B,2,SQL,MEDIUM
+"Normalization primarily reduces data redundancy.",TRUE_FALSE,True,False,,,,A,1,DBMS Theory,EASY
+"Which sorting algorithm has O(n log n) average time complexity?",MCQ,Bubble Sort,Quick Sort,Insertion Sort,Selection Sort,B,2,Algorithms,MEDIUM
+"A stack follows LIFO principle.",TRUE_FALSE,True,False,,,A,1,Data Structures,EASY
+"Which HTTP method is idempotent?",MCQ,POST,PUT,PATCH,DELETE,B,2,Web Technologies,MEDIUM
+"What is a foreign key?",MCQ,Primary identifier of a table,A key that references another table,An indexed column,A unique constraint,B,2,Database,MEDIUM
+"Which OOP principle hides implementation details?",MCQ,Inheritance,Polymorphism,Encapsulation,Abstraction,C,2,OOP Concepts,MEDIUM
