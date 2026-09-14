@@ -3,7 +3,7 @@
 # Target Platform: Render / Cloud PaaS Container Deployment
 # ============================================================
 
-FROM tomcat:9.0-jdk11-jre-slim
+FROM tomcat:9.0-jre11-slim
 
 # Remove default Tomcat sample web applications
 RUN rm -rf /usr/local/tomcat/webapps/*
