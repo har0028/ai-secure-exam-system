@@ -1,7 +1,8 @@
-target/
+target/*
+!target/ai-secure-exam-system.war
 .git/
 .gitignore
 *.log
 .idea/
 *.iml
-.ds_store
+.DS_Store
