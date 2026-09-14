@@ -492,10 +492,10 @@ textarea.form-control-custom {
     background: transparent;
     border: 1px solid var(--glass-border-dark);
     color: #fff;
-    width: 42px; height: 42px;
+    width: 40px; height: 40px;
     border-radius: 12px;
     align-items: center; justify-content: center;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -504,11 +504,23 @@ textarea.form-control-custom {
     color: var(--color-cyan-light);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
 @media (max-width: 1024px) {
     .container-xl { padding: 0 20px; }
     .hero { padding: 150px 0 90px; }
     .hero h1 { font-size: 2.8rem; }
-    .feature-grid, .testimonial-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .feature-grid, .testimonial-grid, .how-it-works-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .contact-grid { grid-template-columns: 1fr; gap: 36px; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
@@ -551,23 +563,35 @@ textarea.form-control-custom {
     .section-head h2 { font-size: 1.75rem; }
     .section-head p { font-size: 0.95rem; }
 
-    .feature-grid, .testimonial-grid, .monitor-grid { grid-template-columns: 1fr; gap: 16px; }
+    .feature-grid, .testimonial-grid, .monitor-grid, .how-it-works-grid { grid-template-columns: 1fr; gap: 16px; }
     .feature-card, .testimonial-card { padding: 22px 18px; }
     
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     
     .btn-gradient, .btn-outline-light {
-        min-height: 44px;
-        padding: 12px 20px;
-        font-size: 0.92rem;
+        min-height: 42px;
+        padding: 10px 18px;
+        font-size: 0.88rem;
     }
+
+    .nav-actions { gap: 8px; }
+    .nav-btn-signin { padding: 8px 12px; font-size: 0.82rem; }
+    .nav-btn-getstarted { padding: 8px 14px; font-size: 0.82rem; }
+    .brand { font-size: 1.05rem; gap: 8px; }
+    .brand .brand-mark { width: 34px; height: 34px; font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+    .nav-btn-signin { display: none; }
+    .brand { font-size: 0.98rem; }
 }
 
 @media (max-width: 380px) {
     .hero h1 { font-size: 1.85rem; }
-    .brand { font-size: 1rem; }
+    .brand { font-size: 0.92rem; }
     .contact-info-item { padding: 12px 14px; gap: 12px; }
     .contact-info-item .info-icon { width: 38px; height: 38px; font-size: 1rem; }
 }
+
 

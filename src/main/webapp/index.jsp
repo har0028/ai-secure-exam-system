@@ -21,9 +21,9 @@
             <a href="#testimonials">Testimonials</a>
             <a href="#contact">Enterprise Contact</a>
         </div>
-        <div style="display:flex; gap:14px; align-items:center;">
-            <a href="<%=request.getContextPath()%>/login" class="btn-outline-light">Sign In</a>
-            <a href="<%=request.getContextPath()%>/register" class="btn-gradient">Get Started</a>
+        <div class="nav-actions">
+            <a href="<%=request.getContextPath()%>/login" class="btn-outline-light nav-btn-signin">Sign In</a>
+            <a href="<%=request.getContextPath()%>/register" class="btn-gradient nav-btn-getstarted">Get Started</a>
             <button class="mobile-nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
         </div>
     </div>
@@ -123,7 +123,7 @@
             <span class="eyebrow-dark">Simplified Workflow</span>
             <h2>Four simple steps to secure assessment</h2>
         </div>
-        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px;">
+        <div class="how-it-works-grid">
             <div class="glass-light" style="padding:26px;">
                 <div style="font-family:var(--font-mono); color:var(--color-indigo); font-weight:800; font-size:1.1rem; margin-bottom:12px;">01. SETUP</div>
                 <h4 style="font-size:1.05rem; margin-bottom:8px; color:var(--color-text-dark);">Create &amp; Schedule</h4>
