@@ -12,7 +12,12 @@
 <div class="app-shell">
     <%@ include file="/common/student-sidebar.jsp" %>
     <div class="app-main">
-        <div class="app-topbar"><h1>Notifications</h1></div>
+        <div class="app-topbar">
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>Notifications</h1>
+            </div>
+        </div>
         <div class="app-content">
             <div class="panel">
                 <c:choose>

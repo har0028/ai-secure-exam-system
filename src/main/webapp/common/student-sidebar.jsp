@@ -29,3 +29,5 @@
         <a href="<%=request.getContextPath()%>/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
     </div>
 </aside>
+<div class="sidebar-overlay" onclick="document.querySelector('.app-shell').classList.remove('sidebar-open')"></div>
+

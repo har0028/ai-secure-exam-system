@@ -13,7 +13,10 @@
 
     <div class="app-main">
         <div class="app-topbar">
-            <h1>${not empty question ? 'Edit Question' : 'Add Question'}</h1>
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>${not empty question ? 'Edit Question' : 'Add Question'}</h1>
+            </div>
             <div class="top-actions">
                 <a href="<%=request.getContextPath()%>/admin/questions?examId=${exam.examId}" class="btn-secondary-outline">
                     <i class="fa-solid fa-arrow-left"></i> Back to Questions

@@ -46,7 +46,10 @@
     <%@ include file="/common/admin-sidebar.jsp" %>
     <div class="app-main">
         <div class="app-topbar">
-            <h1>Live Monitoring</h1>
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>Live Monitoring</h1>
+            </div>
             <div class="top-actions">
                 <span class="live-dot" style="color:var(--color-cyan); font-size:0.8rem; font-weight:600; display:flex; align-items:center; gap:6px;">
                     <span style="width:7px;height:7px;border-radius:50%;background:var(--color-cyan);display:inline-block; animation:pulseDot 1.6s infinite;"></span>

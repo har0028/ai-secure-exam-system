@@ -89,3 +89,123 @@
 .dot { width: 10px; height: 10px; border-radius: 3px; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border-dark); }
 .dot.answered { background: rgba(16,185,129,0.6); }
 .dot.marked { background: rgba(245,158,11,0.6); }
+
+/* ============================================================
+   RESPONSIVE EXAM ENGINE ENGINE (Tablet & Mobile Viewports)
+   ============================================================ */
+@media (max-width: 992px) {
+    .exam-shell {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    .exam-body-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+    }
+    .exam-question-area {
+        padding: 24px 20px;
+        overflow-y: visible;
+    }
+    .exam-sidebar {
+        border-left: none;
+        border-top: 1px solid var(--glass-border-dark);
+        overflow-y: visible;
+    }
+    .webcam-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .webcam-feed {
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .exam-topbar {
+        padding: 12px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .exam-brand {
+        font-size: 0.95rem;
+    }
+    .exam-meta {
+        align-items: flex-start;
+        width: 100%;
+    }
+    .exam-title {
+        font-size: 0.95rem;
+    }
+    .exam-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .timer-box {
+        padding: 6px 12px;
+    }
+    #exam-timer {
+        font-size: 1.15rem;
+    }
+    .question-card {
+        padding: 20px 14px;
+        border-radius: var(--radius-md);
+    }
+    .question-header {
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .question-text {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .option-label {
+        padding: 12px 14px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+    .option-letter {
+        width: 32px; height: 32px;
+        font-size: 0.88rem;
+    }
+    .option-text {
+        font-size: 0.92rem;
+    }
+    .question-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .question-actions > div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .question-actions .btn-sm {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 14px;
+    }
+    .question-palette {
+        grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+        gap: 6px;
+    }
+}
+
+@media (max-width: 380px) {
+    .exam-question-area {
+        padding: 14px 10px;
+    }
+    .question-card {
+        padding: 16px 10px;
+    }
+    .webcam-feed {
+        max-width: 220px;
+    }
+}
+

@@ -24,6 +24,7 @@
         <div style="display:flex; gap:14px; align-items:center;">
             <a href="<%=request.getContextPath()%>/login" class="btn-outline-light">Sign In</a>
             <a href="<%=request.getContextPath()%>/register" class="btn-gradient">Get Started</a>
+            <button class="mobile-nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('nav-open')" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
         </div>
     </div>
 </nav>

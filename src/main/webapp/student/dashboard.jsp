@@ -13,7 +13,10 @@
 
     <div class="app-main">
         <div class="app-topbar">
-            <h1>My Dashboard</h1>
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>My Dashboard</h1>
+            </div>
             <div class="top-actions">
                 <button class="icon-btn"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
                 <div class="topbar-user">

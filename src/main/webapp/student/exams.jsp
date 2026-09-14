@@ -14,7 +14,10 @@
 
     <div class="app-main">
         <div class="app-topbar">
-            <h1>Available Exams</h1>
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>Available Exams</h1>
+            </div>
             <div class="top-actions">
                 <div class="topbar-user">
                     <div class="topbar-avatar">${sessionScope.fullName != null ? sessionScope.fullName.substring(0,1) : 'S'}</div>

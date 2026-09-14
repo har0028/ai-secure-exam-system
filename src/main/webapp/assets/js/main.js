@@ -80,11 +80,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- Mobile sidebar toggle (dashboards) ---
-    var sidebarToggle = document.querySelector('.sidebar-toggle');
+    var sidebarToggles = document.querySelectorAll('.sidebar-toggle');
     var appShell = document.querySelector('.app-shell');
-    if (sidebarToggle && appShell) {
-        sidebarToggle.addEventListener('click', function () {
-            appShell.classList.toggle('sidebar-open');
+    if (sidebarToggles.length && appShell) {
+        sidebarToggles.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                appShell.classList.toggle('sidebar-open');
+            });
+        });
+        document.querySelectorAll('.sidebar-nav a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                appShell.classList.remove('sidebar-open');
+            });
         });
     }
 });

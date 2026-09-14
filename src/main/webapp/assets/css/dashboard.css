@@ -386,11 +386,135 @@
     border-top: 1px solid #E2E8F0;
 }
 
+/* ============================================================
+   RESPONSIVE DASHBOARD ENGINE & MOBILE SIDEBAR DRAWER
+   ============================================================ */
+.sidebar-toggle {
+    display: none;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
 @media (max-width: 1080px) {
-    .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .dash-grid-2 { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .dash-grid-2 { grid-template-columns: 1fr; gap: 20px; }
+    .app-content { padding: 24px 24px 48px; }
 }
+
 @media (max-width: 860px) {
-    .app-shell { grid-template-columns: 1fr; }
-    .app-sidebar { display: none; }
+    .app-shell {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+    
+    .sidebar-toggle {
+        display: inline-flex;
+    }
+
+    .app-sidebar {
+        position: fixed;
+        top: 0; left: 0; bottom: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex !important;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .app-shell.sidebar-open .app-sidebar {
+        transform: translateX(0);
+    }
+
+    .app-shell.sidebar-open .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(9, 13, 36, 0.7);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 999;
+    }
+
+    .app-topbar {
+        padding: 14px 20px;
+    }
+    .app-content {
+        padding: 20px 16px 40px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .panel {
+        padding: 20px 16px;
+    }
 }
+
+@media (max-width: 576px) {
+    .app-topbar {
+        padding: 12px 14px;
+    }
+    .app-topbar h1 {
+        font-size: 1.1rem;
+    }
+    .topbar-user .uname, .topbar-user .urole {
+        display: none;
+    }
+    .topbar-user {
+        padding: 4px;
+        background: transparent;
+        border: none;
+    }
+    .top-actions {
+        gap: 10px;
+    }
+    .stat-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .card-stat {
+        padding: 18px 16px;
+    }
+    .table-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .search-box {
+        max-width: 100%;
+        width: 100%;
+    }
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .form-actions .btn-primary-solid,
+    .form-actions .btn-secondary-outline {
+        width: 100%;
+        justify-content: center;
+    }
+    .cell-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cell-actions .btn-sm {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-content {
+        padding: 14px 10px 32px;
+    }
+    .panel {
+        padding: 16px 12px;
+        border-radius: var(--radius-md);
+    }
+}
+

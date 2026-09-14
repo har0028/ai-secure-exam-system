@@ -13,7 +13,10 @@
 
     <div class="app-main">
         <div class="app-topbar">
-            <h1>Questions</h1>
+            <div style="display:flex; align-items:center;">
+                <button class="sidebar-toggle icon-btn" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
+                <h1>Questions</h1>
+            </div>
             <c:if test="${not empty selectedExam}">
                 <div class="top-actions">
                     <a href="<%=request.getContextPath()%>/admin/questions/bulk-upload?examId=${selectedExam.examId}" class="btn-secondary-outline">
